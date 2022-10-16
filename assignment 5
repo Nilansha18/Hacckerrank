@@ -19,12 +19,14 @@ void printLinkedList(SinglyLinkedListNode* head) {
 SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
     struct SinglyLinkedListNode *ptr;
     struct SinglyLinkedListNode *temp;
+    
     temp=(struct SinglyLinkedListNode*) malloc(sizeof(struct SinglyLinkedListNode));
+    
     temp->data= data;
     temp->next= NULL;
     if(head==NULL){
-        head->next=temp;
-        temp=NULL;
+        return temp;
+        
         
     }
     ptr=head;
@@ -32,8 +34,9 @@ SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
         ptr=ptr->next;
     }
     ptr->next=temp;
-    temp=NULL;
+    
     return head;
+    
 }
 
 
@@ -51,4 +54,53 @@ SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* head, int data) {
 
 
 }
+
+#Insert a node at a specific position in a linked list
+
+SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) {
+     struct SinglyLinkedListNode *ptr,*temp;
+    temp=(struct SinglyLinkedListNode*) malloc(sizeof(struct SinglyLinkedListNode));
+    temp->data= data;
+    temp->next= NULL;
+    ptr=head;
+    while(position !=1){
+        ptr=ptr->next;
+        position--;
+    }
+    temp->next=ptr->next;
+    ptr->next=temp; 
+    return head;
+    
+    
+    
+    
+    
+
+}
+
+
+#DELETING A NODE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
