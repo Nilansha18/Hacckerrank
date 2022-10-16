@@ -1,0 +1,54 @@
+#Print the Elements of a Linked List
+
+void printLinkedList(SinglyLinkedListNode* head) {
+    struct SinglyLinkedListNode *ptr;
+    ptr=head;
+    while(ptr!=NULL){
+        cout<<ptr->data<<endl;
+        ptr=ptr->next;
+        
+    }
+
+
+}
+
+
+
+#Insert a Node at the Tail of a Linked List
+
+SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
+    struct SinglyLinkedListNode *ptr;
+    struct SinglyLinkedListNode *temp;
+    temp=(struct SinglyLinkedListNode*) malloc(sizeof(struct SinglyLinkedListNode));
+    temp->data= data;
+    temp->next= NULL;
+    if(head==NULL){
+        head->next=temp;
+        temp=NULL;
+        
+    }
+    ptr=head;
+    while(ptr->next!=NULL){
+        ptr=ptr->next;
+    }
+    ptr->next=temp;
+    temp=NULL;
+    return head;
+}
+
+
+#Inserting a node at the head
+
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* head, int data) {
+    SinglyLinkedListNode  *temp;
+    temp=(struct SinglyLinkedListNode*)malloc(sizeof(struct SinglyLinkedListNode));
+    temp->data=data;
+    temp->next = head;
+    return temp;
+    
+    
+    
+
+
+}
+
