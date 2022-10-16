@@ -1,4 +1,4 @@
-#Print the Elements of a Linked List
+#1. Print the Elements of a Linked List
 
 void printLinkedList(SinglyLinkedListNode* head) {
     struct SinglyLinkedListNode *ptr;
@@ -14,7 +14,7 @@ void printLinkedList(SinglyLinkedListNode* head) {
 
 
 
-#Insert a Node at the Tail of a Linked List
+#2. Insert a Node at the Tail of a Linked List
 
 SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
     struct SinglyLinkedListNode *ptr;
@@ -40,7 +40,7 @@ SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
 }
 
 
-#Inserting a node at the head
+#3. Inserting a node at the head
 
 SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* head, int data) {
     SinglyLinkedListNode  *temp;
@@ -55,7 +55,7 @@ SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* head, int data) {
 
 }
 
-#Insert a node at a specific position in a linked list
+#4. Insert a node at a specific position in a linked list
 
 SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) {
      struct SinglyLinkedListNode *ptr,*temp;
@@ -79,7 +79,7 @@ SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data,
 }
 
 
-#DELETING A NODE
+#5. DELETING A NODE
 SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* head, int position) {
     SinglyLinkedListNode *ptr =head, *ptr2=head;
     
@@ -107,6 +107,23 @@ SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* head, int position) {
 
 }
 
+#6. CYCLE DETECTION
+
+bool has_cycle(SinglyLinkedListNode* head) {
+    SinglyLinkedListNode *temp1=head,*temp2=head;
+    if(head==NULL) return false;
+    while(temp2!=NULL && temp2->next !=NULL){
+        temp1=temp1->next;
+        temp2=temp2->next->next;
+        
+        if(temp1==temp2){
+            return true;
+        }
+        
+    }
+    return false;
+    
+}
 
 
 
