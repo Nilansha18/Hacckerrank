@@ -1,0 +1,7 @@
+int camelcase(string s) {
+    int c=1;
+    for(int i=1; i<s.length();i++){
+        if( int(s[i])<97 ) c++;
+    }
+    return c;
+}
