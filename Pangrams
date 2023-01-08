@@ -1,0 +1,20 @@
+string pangrams(string s) {
+    int arr[26]={0};
+    string ans;
+    for(int i=0; i<s.length(); i++){
+        char x=(char)tolower(s[i]);
+        if(x>96) arr[int(x)-97]++;
+    }
+    for(int i=0; i<26; i++){
+        cout<<arr[i]<<" ";
+    }
+    for(int i=0; i<26; i++){
+        if(arr[i]==0) { 
+            ans="not pangram";
+            break;
+        }
+        else ans="pangram";
+    }
+    
+    return ans;
+}
