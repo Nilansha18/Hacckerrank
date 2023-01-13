@@ -12,15 +12,12 @@ Node* createNode(int val){
 	return temp;
 }
 
-//complete the functions
-
 class Queue{
 	Node *head;
 	Node *tail;
 	int s;
 	
 	public:
-	//constructor is called whenever an object of the class is declared
 	Queue(){
 		cout<<"constructor is Called\n";
 		s=0;
