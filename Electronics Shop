@@ -1,0 +1,14 @@
+int getMoneySpent(vector<int> keyboards, vector<int> drives, int b) {
+    vector<int> ans;
+    for(int i=0;i<keyboards.size();i++){
+        for(int j=0;j<drives.size();j++){
+            if((keyboards[i]+drives[j])<=b) ans.push_back((keyboards[i]+drives[j]));
+        }
+    }
+    if(ans.size()==0) return -1;
+    int max=ans[0];
+    for(int i=0; i<ans.size();i++){
+        if(ans[i]>max) max=ans[i];
+    }
+    return max;
+}
