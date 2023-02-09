@@ -1,0 +1,10 @@
+int pageCount(int n, int p) {
+    int cnt1=1,cnt2=1,x=1 , y=n;
+    if( (p==1) ||  (n==p)) return 0;
+    if((n-p)==1){
+        if(n%2==0) return 1;
+        else return 0;
+    }
+    if( p<=(n/2)) return (p)/2 ;
+    else return (n-p)/2;
+}
